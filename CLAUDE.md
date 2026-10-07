@@ -17,6 +17,7 @@ Transposé d'une version React d'origine ; le rendu doit rester identique.
   `docs/<nom>` pour la documentation), jamais directement sur `main`. Intégration par pull request.
 - Messages de commit en français.
 - Ne push jamais sans ma permission
+- Ne supprime aucun commit
 
 ## Structure
 
