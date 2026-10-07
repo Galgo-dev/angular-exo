@@ -21,6 +21,10 @@
   color: var(--color-muted);
 }
 
+/* Sur téléphone, l'espace du haut laisse la place au sélecteur de langue fixé dans le coin. */
 @media (max-width: 820px) {
-  .pageLayout { grid-template-columns: minmax(0, 1fr); }
+  .pageLayout {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 72px;
+  }
 }

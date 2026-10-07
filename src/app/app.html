@@ -1,32 +1,36 @@
+@let content = cv();
+@let sections = ui().sections;
+<app-language-switch />
+
 <div class="pageLayout">
   <app-sidebar
-    [profile]="cv.profile"
-    [contacts]="cv.contacts"
-    [languages]="cv.languages"
-    [employmentAid]="cv.employmentAid"
+    [profile]="content.profile"
+    [contacts]="content.contacts"
+    [languages]="content.languages"
+    [employmentAid]="content.employmentAid"
   />
 
   <main class="mainContent">
-    <app-profile-summary [segments]="cv.profile.summary" />
+    <app-profile-summary [segments]="content.profile.summary" />
 
-    <app-section heading="Expériences">
-      <app-timeline [items]="cv.experiences" />
+    <app-section [heading]="sections.experience">
+      <app-timeline [items]="content.experiences" />
     </app-section>
 
-    <app-section heading="Formation">
-      <app-timeline [items]="cv.education" />
+    <app-section [heading]="sections.education">
+      <app-timeline [items]="content.education" />
     </app-section>
 
-    <app-section heading="Compétences">
-      <app-skill-groups [groups]="cv.skillGroups" />
+    <app-section [heading]="sections.skills">
+      <app-skill-groups [groups]="content.skillGroups" />
     </app-section>
 
-    <app-section heading="Loisirs">
-      <app-hobby-list [hobbies]="cv.hobbies" />
+    <app-section [heading]="sections.hobbies">
+      <app-hobby-list [hobbies]="content.hobbies" />
     </app-section>
 
     <footer class="footer">
-      {{ cv.profile.firstName }} {{ cv.profile.lastName }} · CV · {{ year }}
+      {{ content.profile.firstName }} {{ content.profile.lastName }} · {{ ui().footerCv }} · {{ year }}
     </footer>
   </main>
 </div>

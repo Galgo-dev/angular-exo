@@ -1,0 +1,39 @@
+/* Fixé au coin supérieur droit, au-dessus du contenu (et du menu d'ambiance). */
+:host {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 16px);
+  right: calc(env(safe-area-inset-right, 0px) + 16px);
+  z-index: 20;
+}
+
+.switch {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px -12px var(--glow-secondary);
+}
+
+.option {
+  padding: 5px 11px;
+  font: 500 0.75rem var(--font-mono);
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.option:hover {
+  color: var(--color-text);
+}
+
+.active,
+.active:hover {
+  background: var(--gradient-brand);
+  color: var(--color-on-accent);
+}

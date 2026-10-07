@@ -1,0 +1,15 @@
+<div class="switch" role="group" [attr.aria-label]="ui().languageSwitch">
+  @for (option of options; track option.id) {
+    <button
+      type="button"
+      class="option"
+      [class.active]="option.id === lang()"
+      [attr.aria-pressed]="option.id === lang()"
+      [attr.lang]="option.id"
+      [attr.aria-label]="option.name"
+      (click)="select(option.id)"
+    >
+      {{ option.short }}
+    </button>
+  }
+</div>

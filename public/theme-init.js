@@ -1,5 +1,5 @@
-// Chargé de façon bloquante dans <head> : pose data-theme et data-ambiance avant le premier rendu.
-// Les clés doivent rester identiques à celles de src/app/core/theme-store.ts et src/app/core/ambiance-store.ts.
+// Chargé de façon bloquante dans <head> : pose data-theme, data-ambiance et lang avant le premier rendu.
+// Les clés doivent rester identiques à celles de src/app/core/theme-store.ts, ambiance-store.ts et language-store.ts.
 (function () {
   try {
     var root = document.documentElement;
@@ -11,7 +11,11 @@
     if (ambiance && ambiance !== 'electric') {
       root.dataset.ambiance = ambiance;
     }
+    var lang = localStorage.getItem('cv-lang');
+    if (lang === 'fr' || lang === 'en') {
+      root.lang = lang;
+    }
   } catch (error) {
-    /* stockage indisponible : thème du système et ambiance par défaut */
+    /* stockage indisponible : thème du système, ambiance et langue par défaut */
   }
 })();

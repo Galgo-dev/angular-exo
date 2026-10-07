@@ -1,7 +1,7 @@
 <div
   class="bar"
   role="meter"
-  aria-label="Niveau CECR"
+  [attr.aria-label]="ui().cefrLevel"
   aria-valuemin="1"
   [attr.aria-valuemax]="levels.length"
   [attr.aria-valuenow]="reachedIndex() + 1"

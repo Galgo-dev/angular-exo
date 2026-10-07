@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Profile } from '../../core/cv.model';
+import { LanguageStore } from '../../core/language-store';
 import { AmbianceSelect } from '../ambiance-select/ambiance-select';
 import { ThemeToggle } from '../theme-toggle/theme-toggle';
 
@@ -12,4 +13,6 @@ import { ThemeToggle } from '../theme-toggle/theme-toggle';
 })
 export class ProfileHeader {
   readonly profile = input.required<Profile>();
+
+  protected readonly ui = inject(LanguageStore).ui;
 }

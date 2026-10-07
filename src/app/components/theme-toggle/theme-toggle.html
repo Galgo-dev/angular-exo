@@ -2,7 +2,7 @@
   type="button"
   class="toggle"
   (click)="toggle()"
-  [attr.aria-label]="'Passer en ' + nextThemeLabel().toLowerCase()"
+  [attr.aria-label]="ui().switchToPrefix + nextThemeLabel().toLowerCase()"
 >
   @if (isDark()) {
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
