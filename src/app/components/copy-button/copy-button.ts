@@ -1,14 +1,10 @@
 import { Component, DestroyRef, inject, input, signal } from '@angular/core';
+import { UiStrings } from '../../core/i18n';
+import { LanguageStore } from '../../core/language-store';
 
-type CopyStatus = 'idle' | 'copied' | 'selected';
+type CopyStatus = keyof UiStrings['copyStatus'];
 
 const FEEDBACK_DURATION_MS = 1600;
-
-const STATUS_LABELS: Record<CopyStatus, string> = {
-  idle: 'Copier',
-  copied: 'Copié',
-  selected: 'Sélectionné',
-};
 
 /**
  * Copie `text` ; en cas de refus du navigateur, sélectionne l'élément `target`.
@@ -25,7 +21,7 @@ export class CopyButton {
   readonly target = input<HTMLElement>();
 
   protected readonly status = signal<CopyStatus>('idle');
-  protected readonly statusLabels = STATUS_LABELS;
+  protected readonly ui = inject(LanguageStore).ui;
   private resetTimer?: ReturnType<typeof setTimeout>;
 
   constructor() {

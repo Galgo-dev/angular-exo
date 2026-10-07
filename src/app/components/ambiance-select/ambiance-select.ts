@@ -1,5 +1,6 @@
 import { Component, ElementRef, computed, effect, inject, signal, viewChild } from '@angular/core';
 import { AmbianceStore } from '../../core/ambiance-store';
+import { LanguageStore } from '../../core/language-store';
 import { uniqueId } from '../../core/unique-id';
 
 /**
@@ -16,11 +17,14 @@ import { uniqueId } from '../../core/unique-id';
 })
 export class AmbianceSelect {
   private readonly ambianceStore = inject(AmbianceStore);
+  private readonly languageStore = inject(LanguageStore);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly button = viewChild.required<ElementRef<HTMLButtonElement>>('button');
   private readonly list = viewChild<ElementRef<HTMLUListElement>>('list');
 
   protected readonly listId = uniqueId('ambiance-list');
+  protected readonly lang = this.languageStore.lang;
+  protected readonly ui = this.languageStore.ui;
   protected readonly ambiance = this.ambianceStore.ambiance;
   protected readonly ambiances = this.ambianceStore.ambiances;
   protected readonly isOpen = signal(false);

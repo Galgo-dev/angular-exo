@@ -2,12 +2,12 @@
   <app-profile-header [profile]="profile()" />
 
   <section>
-    <h2 class="label">Contact</h2>
+    <h2 class="label">{{ ui().contactHeading }}</h2>
     <app-contact-list [contacts]="contacts()" />
   </section>
 
   <section>
-    <h2 class="label">Langues · échelle CECR</h2>
+    <h2 class="label">{{ ui().languagesHeading }}</h2>
     <app-language-list [languages]="languages()" />
   </section>
 

@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Contact, EmploymentAid, Language, Profile } from '../../core/cv.model';
+import { LanguageStore } from '../../core/language-store';
 import { ContactList } from '../contact-list/contact-list';
 import { LanguageList } from '../language-list/language-list';
 import { ProfileHeader } from '../profile-header/profile-header';
@@ -16,4 +17,6 @@ export class Sidebar {
   readonly contacts = input.required<Contact[]>();
   readonly languages = input.required<Language[]>();
   readonly employmentAid = input.required<EmploymentAid>();
+
+  protected readonly ui = inject(LanguageStore).ui;
 }

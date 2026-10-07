@@ -1,3 +1,8 @@
-<button type="button" class="button" (click)="copy()" [attr.aria-label]="'Copier : ' + label()">
-  <span aria-live="polite">{{ statusLabels[status()] }}</span>
+<button
+  type="button"
+  class="button"
+  (click)="copy()"
+  [attr.aria-label]="ui().copyPrefix + label()"
+>
+  <span aria-live="polite">{{ ui().copyStatus[status()] }}</span>
 </button>

@@ -6,12 +6,12 @@
     aria-haspopup="listbox"
     [attr.aria-expanded]="isOpen()"
     [attr.aria-controls]="listId"
-    [attr.aria-label]="'Ambiance : ' + ambiance().label"
+    [attr.aria-label]="ui().ambiancePrefix + ambiance().label[lang()]"
     (click)="toggle()"
     (keydown)="onButtonKeyDown($event)"
   >
     <span class="swatch" style="background: var(--gradient-brand)" aria-hidden="true"></span>
-    <span>{{ ambiance().label }}</span>
+    <span>{{ ambiance().label[lang()] }}</span>
     <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M6 9l6 6 6-6" />
     </svg>
@@ -23,7 +23,7 @@
       [id]="listId"
       class="list"
       role="listbox"
-      aria-label="Choisir une ambiance"
+      [attr.aria-label]="ui().chooseAmbiance"
       [attr.aria-activedescendant]="listId + '-' + ambiances[activeIndex()].id"
       tabindex="-1"
       (keydown)="onListKeyDown($event)"
@@ -45,7 +45,7 @@
             [style.background]="previewGradient(item.preview)"
             aria-hidden="true"
           ></span>
-          <span class="optionLabel">{{ item.label }}</span>
+          <span class="optionLabel">{{ item.label[lang()] }}</span>
           @if (isSelected) {
             <svg class="check" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12.5l4.5 4.5L19 7.5" />
