@@ -16,6 +16,7 @@ Transposé d'une version React d'origine ; le rendu doit rester identique.
 - **Chaque nouvelle fonctionnalité se développe sur une nouvelle branche** (`feature/<nom-court>`,
   `docs/<nom>` pour la documentation), jamais directement sur `main`. Intégration par pull request.
 - Messages de commit en français.
+- Ne push jamais sans ma permission
 
 ## Structure
 
