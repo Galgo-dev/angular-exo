@@ -28,6 +28,12 @@ export const CV_EN: Cv = {
       value: 'guillaume-belle',
       href: 'https://www.linkedin.com/in/guillaume-belle-6a5413293',
     },
+    {
+      id: 'github',
+      label: 'GitHub',
+      value: 'Galgo-dev',
+      href: 'https://github.com/Galgo-dev',
+    },
     { id: 'location', label: 'Location', value: '5540 Waulsort, Belgium' },
   ],
 
