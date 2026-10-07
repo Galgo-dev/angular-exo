@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.segment {
+  height: 6px;
+  border-radius: 2px;
+  background: var(--color-border);
+}
+
+/* Le dégradé s'étend sur les 6 segments : chacun en affiche sa portion (index 0 → 5). */
+.filled {
+  background: var(--gradient-brand);
+  background-size: 600% 100%;
+  background-position: calc(var(--segment-index) * 20%) 0;
+}

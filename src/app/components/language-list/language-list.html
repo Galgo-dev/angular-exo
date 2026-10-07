@@ -1,0 +1,16 @@
+<ul class="list">
+  @for (language of languages(); track language.id) {
+    <li>
+      <div class="header">
+        <span>{{ language.name }}</span>
+        <span class="levelLabel">{{ language.levelLabel }}</span>
+      </div>
+      <app-language-level [level]="language.level" />
+    </li>
+  }
+</ul>
+<div class="scale" aria-hidden="true">
+  @for (level of levels; track level) {
+    <span>{{ level }}</span>
+  }
+</div>

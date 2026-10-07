@@ -1,0 +1,22 @@
+@let p = profile();
+<header>
+  <div class="topRow">
+    @if (p.photo) {
+      <img
+        class="avatar"
+        [src]="p.photo"
+        [alt]="'Photo de ' + p.firstName + ' ' + p.lastName"
+        width="96"
+        height="96"
+      />
+    } @else {
+      <div class="avatar" aria-hidden="true">{{ p.initials }}</div>
+    }
+    <div class="displayControls">
+      <app-theme-toggle />
+      <app-ambiance-select />
+    </div>
+  </div>
+  <h1 class="name">{{ p.firstName }} {{ p.lastName }}</h1>
+  <p class="jobTitle">{{ p.jobTitle }}</p>
+</header>

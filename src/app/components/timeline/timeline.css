@@ -1,0 +1,55 @@
+:host {
+  display: block;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 20px;
+  padding-block: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Le premier séparateur de chaque liste porte le dégradé de marque. */
+.item:first-child {
+  border-top: 2px solid transparent;
+  border-image: var(--gradient-line) 1;
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.period {
+  padding-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-muted);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  margin: 2px 0 10px;
+  font-size: 0.92rem;
+  color: var(--color-highlight);
+}
+
+.description {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+@media (max-width: 520px) {
+  .item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+}

@@ -1,0 +1,17 @@
+<div
+  class="bar"
+  role="meter"
+  aria-label="Niveau CECR"
+  aria-valuemin="1"
+  [attr.aria-valuemax]="levels.length"
+  [attr.aria-valuenow]="reachedIndex() + 1"
+  [attr.aria-valuetext]="level()"
+>
+  @for (cefrLevel of levels; track cefrLevel; let index = $index) {
+    <span
+      class="segment"
+      [class.filled]="index <= reachedIndex()"
+      [style.--segment-index]="index"
+    ></span>
+  }
+</div>

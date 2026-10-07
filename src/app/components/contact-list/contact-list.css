@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.value {
+  display: block;
+  overflow-wrap: anywhere;
+  user-select: all;
+}

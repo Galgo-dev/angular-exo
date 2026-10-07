@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <button
+    #button
+    type="button"
+    class="trigger"
+    aria-haspopup="listbox"
+    [attr.aria-expanded]="isOpen()"
+    [attr.aria-controls]="listId"
+    [attr.aria-label]="'Ambiance : ' + ambiance().label"
+    (click)="toggle()"
+    (keydown)="onButtonKeyDown($event)"
+  >
+    <span class="swatch" style="background: var(--gradient-brand)" aria-hidden="true"></span>
+    <span>{{ ambiance().label }}</span>
+    <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  </button>
+
+  @if (isOpen()) {
+    <ul
+      #list
+      [id]="listId"
+      class="list"
+      role="listbox"
+      aria-label="Choisir une ambiance"
+      [attr.aria-activedescendant]="listId + '-' + ambiances[activeIndex()].id"
+      tabindex="-1"
+      (keydown)="onListKeyDown($event)"
+    >
+      @for (item of ambiances; track item.id; let index = $index) {
+        @let isSelected = item.id === ambiance().id;
+        <li
+          [id]="listId + '-' + item.id"
+          role="option"
+          [attr.aria-selected]="isSelected"
+          class="option"
+          [class.active]="index === activeIndex()"
+          [class.selected]="isSelected"
+          (click)="choose(index)"
+          (pointerenter)="activeIndex.set(index)"
+        >
+          <span
+            class="swatch"
+            [style.background]="previewGradient(item.preview)"
+            aria-hidden="true"
+          ></span>
+          <span class="optionLabel">{{ item.label }}</span>
+          @if (isSelected) {
+            <svg class="check" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12.5l4.5 4.5L19 7.5" />
+            </svg>
+          }
+        </li>
+      }
+    </ul>
+  }
+</div>

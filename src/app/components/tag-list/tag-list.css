@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  padding: 3px 10px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  background: var(--gradient-soft);
+  color: var(--color-text);
+}

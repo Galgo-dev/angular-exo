@@ -1,0 +1,56 @@
+:host {
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 32px;
+}
+
+.groupTitle {
+  margin: 0 0 10px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill {
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.skill:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-1px);
+}
+
+.component::before {
+  content: "<";
+  color: var(--color-primary);
+}
+
+.component::after {
+  content: " />";
+  color: var(--color-secondary);
+}
+
+/* Nombre impair de groupes : le dernier prend toute la largeur au lieu de rester seul. */
+.grid > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}

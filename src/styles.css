@@ -1,0 +1,10 @@
+/* Styles globaux : Tailwind (couches CSS), puis tokens, ambiances et base du CV (hors couche, donc prioritaires). */
+
+@import 'tailwindcss';
+
+@import './styles/theme.css';
+@import './styles/ambiances/spring.css';
+@import './styles/ambiances/summer.css';
+@import './styles/ambiances/autumn.css';
+@import './styles/ambiances/winter.css';
+@import './styles/global.css';

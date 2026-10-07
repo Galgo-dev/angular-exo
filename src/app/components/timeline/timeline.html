@@ -1,0 +1,19 @@
+<ol class="timeline">
+  @for (item of items(); track item.id) {
+    <li class="item">
+      <div class="period">{{ item.period }}</div>
+      <div>
+        <h3 class="title">{{ item.title }}</h3>
+        @if (item.role) {
+          <p class="role">{{ item.role }}</p>
+        }
+        @if (item.description) {
+          <p class="description">{{ item.description }}</p>
+        }
+        @if (item.tags) {
+          <app-tag-list [tags]="item.tags" />
+        }
+      </div>
+    </li>
+  }
+</ol>

@@ -1,0 +1,12 @@
+<div class="grid">
+  @for (group of groups(); track group.id) {
+    <div>
+      <h3 class="groupTitle">{{ group.title }}</h3>
+      <ul class="list">
+        @for (item of group.items; track item) {
+          <li class="skill" [class.component]="group.variant === 'component'">{{ item }}</li>
+        }
+      </ul>
+    </div>
+  }
+</div>

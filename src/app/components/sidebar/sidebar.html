@@ -1,0 +1,17 @@
+<aside class="sidebar">
+  <app-profile-header [profile]="profile()" />
+
+  <section>
+    <h2 class="label">Contact</h2>
+    <app-contact-list [contacts]="contacts()" />
+  </section>
+
+  <section>
+    <h2 class="label">Langues · échelle CECR</h2>
+    <app-language-list [languages]="languages()" />
+  </section>
+
+  <p class="employmentAid">
+    <strong>{{ employmentAid().label }} :</strong> {{ employmentAid().value }}
+  </p>
+</aside>

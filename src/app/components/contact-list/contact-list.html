@@ -1,0 +1,22 @@
+<ul class="list">
+  @for (contact of contacts(); track contact.id) {
+    <li class="item">
+      @if (contact.href) {
+        <div>
+          <span class="label">{{ contact.label }}</span>
+          <a class="value" [href]="contact.href" target="_blank" rel="noopener noreferrer">
+            {{ contact.value }}
+          </a>
+        </div>
+      } @else {
+        <div>
+          <span class="label">{{ contact.label }}</span>
+          <span class="value" #value>{{ contact.value }}</span>
+        </div>
+        @if (contact.copyable) {
+          <app-copy-button [text]="contact.value" [target]="value" [label]="contact.label" />
+        }
+      }
+    </li>
+  }
+</ul>

@@ -1,0 +1,56 @@
+/* Styles de base partagés : reset léger, typographie, focus. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 clamp(16px, 4vw, 48px);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Halos de couleur fixes derrière la page : couleur principale en haut à gauche, secondaire en bas à droite. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vmax 50vmax at 0% 0%, var(--glow-primary), transparent 70%),
+    radial-gradient(60vmax 50vmax at 100% 100%, var(--glow-secondary), transparent 70%);
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

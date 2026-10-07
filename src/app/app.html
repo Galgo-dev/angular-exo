@@ -1,0 +1,32 @@
+<div class="pageLayout">
+  <app-sidebar
+    [profile]="cv.profile"
+    [contacts]="cv.contacts"
+    [languages]="cv.languages"
+    [employmentAid]="cv.employmentAid"
+  />
+
+  <main class="mainContent">
+    <app-profile-summary [segments]="cv.profile.summary" />
+
+    <app-section heading="Expériences">
+      <app-timeline [items]="cv.experiences" />
+    </app-section>
+
+    <app-section heading="Formation">
+      <app-timeline [items]="cv.education" />
+    </app-section>
+
+    <app-section heading="Compétences">
+      <app-skill-groups [groups]="cv.skillGroups" />
+    </app-section>
+
+    <app-section heading="Loisirs">
+      <app-hobby-list [hobbies]="cv.hobbies" />
+    </app-section>
+
+    <footer class="footer">
+      {{ cv.profile.firstName }} {{ cv.profile.lastName }} · CV · {{ year }}
+    </footer>
+  </main>
+</div>

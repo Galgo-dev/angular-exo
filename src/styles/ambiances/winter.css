@@ -1,0 +1,55 @@
+/*
+ * Ambiance « Hiver » : bleu glacier, ardoise et givre.
+ * Ne redéfinit que des tokens : aucun composant n'est modifié.
+ * Active quand <html data-ambiance="winter">, en clair comme en sombre.
+ */
+:root[data-ambiance="winter"] {
+  --color-bg: #F2F6F9;
+  --color-surface: #FFFFFF;
+  --color-text: #14202B;
+  --color-muted: #566575;
+  --color-border: #D9E3EB;
+  --color-primary: #1F5F8B;
+  --color-secondary: #4A5F86;
+  --color-on-accent: #FFFFFF;
+  --gradient-brand: linear-gradient(120deg, #1B2F4E 0%, #2A6F97 55%, #7FB8D8 100%);
+  --gradient-soft: linear-gradient(120deg, #E1EDF5 0%, #EAEEF6 100%);
+  --gradient-line: linear-gradient(90deg, #1B2F4E, #2A6F97 40%, #7FB8D8 65%, transparent);
+  --glow-primary: rgba(42, 111, 151, 0.12);
+  --glow-secondary: rgba(127, 184, 216, 0.18);
+  --font-display: "Josefin Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-ambiance="winter"]:not([data-theme="light"]) {
+    --color-bg: #0A1118;
+    --color-surface: #111C26;
+    --color-text: #E6EEF4;
+    --color-muted: #9AABB9;
+    --color-border: #23323F;
+    --color-primary: #8CC8EA;
+    --color-secondary: #B9C6E0;
+    --color-on-accent: #0A1118;
+    --gradient-brand: linear-gradient(120deg, #5C8DBF 0%, #8CC8EA 55%, #DCEFFA 100%);
+    --gradient-soft: linear-gradient(120deg, #15283A 0%, #1E2538 100%);
+    --gradient-line: linear-gradient(90deg, #5C8DBF, #8CC8EA 40%, #DCEFFA 65%, transparent);
+    --glow-primary: rgba(140, 200, 234, 0.12);
+    --glow-secondary: rgba(220, 239, 250, 0.07);
+  }
+}
+
+:root[data-ambiance="winter"][data-theme="dark"] {
+  --color-bg: #0A1118;
+  --color-surface: #111C26;
+  --color-text: #E6EEF4;
+  --color-muted: #9AABB9;
+  --color-border: #23323F;
+  --color-primary: #8CC8EA;
+  --color-secondary: #B9C6E0;
+  --color-on-accent: #0A1118;
+  --gradient-brand: linear-gradient(120deg, #5C8DBF 0%, #8CC8EA 55%, #DCEFFA 100%);
+  --gradient-soft: linear-gradient(120deg, #15283A 0%, #1E2538 100%);
+  --gradient-line: linear-gradient(90deg, #5C8DBF, #8CC8EA 40%, #DCEFFA 65%, transparent);
+  --glow-primary: rgba(140, 200, 234, 0.12);
+  --glow-secondary: rgba(220, 239, 250, 0.07);
+}

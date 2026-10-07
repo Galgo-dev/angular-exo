@@ -1,0 +1,66 @@
+/*
+ * Design tokens : seule source des couleurs, dégradés et polices.
+ * Les composants n'utilisent que ces variables, jamais de couleur en dur.
+ * Trois états : data-theme="light", data-theme="dark", ou rien (= réglage du système).
+ *
+ * Ambiance par défaut « Électrique » : bleu → violet. Le dégradé de marque sert aux éléments
+ * d'identité (nom, photo, niveaux) ; les versions douces habillent les surfaces.
+ */
+:root {
+  --color-bg: #F5F4FB;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1733;
+  --color-muted: #5E5A7A;
+  --color-border: #E2DFF0;
+
+  --color-primary: #2F5BEA;
+  --color-secondary: #7B3FE4;
+  --color-accent: var(--color-primary);
+  --color-highlight: var(--color-secondary);
+  --color-on-accent: #FFFFFF;
+
+  --gradient-brand: linear-gradient(120deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  --gradient-soft: linear-gradient(120deg, #E6ECFD 0%, #EFE6FC 100%);
+  --gradient-line: linear-gradient(90deg, var(--color-primary), var(--color-secondary) 60%, transparent);
+  --glow-primary: rgba(47, 91, 234, 0.14);
+  --glow-secondary: rgba(123, 63, 228, 0.14);
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --focus-ring: 2px solid var(--color-secondary);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0D0B1E;
+    --color-surface: #16132E;
+    --color-text: #ECEAF8;
+    --color-muted: #A39FC2;
+    --color-border: #2B2650;
+    --color-primary: #6E8BFF;
+    --color-secondary: #B48CFF;
+    --color-on-accent: #0D0B1E;
+    --gradient-soft: linear-gradient(120deg, #1B2150 0%, #2A1B4F 100%);
+    --glow-primary: rgba(110, 139, 255, 0.16);
+    --glow-secondary: rgba(180, 140, 255, 0.14);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0D0B1E;
+  --color-surface: #16132E;
+  --color-text: #ECEAF8;
+  --color-muted: #A39FC2;
+  --color-border: #2B2650;
+  --color-primary: #6E8BFF;
+  --color-secondary: #B48CFF;
+  --color-on-accent: #0D0B1E;
+  --gradient-soft: linear-gradient(120deg, #1B2150 0%, #2A1B4F 100%);
+  --glow-primary: rgba(110, 139, 255, 0.16);
+  --glow-secondary: rgba(180, 140, 255, 0.14);
+  color-scheme: dark;
+}

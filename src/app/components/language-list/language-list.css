@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.list {
+  display: grid;
+  gap: 14px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.levelLabel {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* Même grille que la barre de niveau, pour aligner les repères A1 → C2. */
+.scale {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-muted);
+  text-align: center;
+}

@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+/* Bordure dégradée : fond surface sur padding-box, dégradé visible sur border-box. */
+.hobby {
+  /* Texte centré horizontalement et verticalement (les cartes d'une ligne ont la même hauteur). */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background:
+    linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+    linear-gradient(var(--color-border), var(--color-border)) border-box;
+  transition: transform 0.15s;
+}
+
+.hobby:hover {
+  background:
+    linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+    var(--gradient-brand) border-box;
+  transform: translateY(-2px);
+}

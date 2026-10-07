@@ -1,0 +1,55 @@
+/*
+ * Ambiance « Été » : turquoise de mer, soleil doré et corail.
+ * Ne redéfinit que des tokens : aucun composant n'est modifié.
+ * Active quand <html data-ambiance="summer">, en clair comme en sombre.
+ */
+:root[data-ambiance="summer"] {
+  --color-bg: #FFFBF2;
+  --color-surface: #FFFFFF;
+  --color-text: #1F2430;
+  --color-muted: #5F6573;
+  --color-border: #F0E5D0;
+  --color-primary: #0E8796;
+  --color-secondary: #C4520A;
+  --color-on-accent: #FFFFFF;
+  --gradient-brand: linear-gradient(120deg, #0E8796 0%, #E9A21A 55%, #EE5E3A 100%);
+  --gradient-soft: linear-gradient(120deg, #DBF3F5 0%, #FFF0D4 100%);
+  --gradient-line: linear-gradient(90deg, #0E8796, #E9A21A 40%, #EE5E3A 65%, transparent);
+  --glow-primary: rgba(14, 135, 150, 0.13);
+  --glow-secondary: rgba(233, 162, 26, 0.16);
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-ambiance="summer"]:not([data-theme="light"]) {
+    --color-bg: #0A1A1F;
+    --color-surface: #11262D;
+    --color-text: #EAF4F5;
+    --color-muted: #9FB6BB;
+    --color-border: #21404A;
+    --color-primary: #4FD1DF;
+    --color-secondary: #FFB347;
+    --color-on-accent: #0A1A1F;
+    --gradient-brand: linear-gradient(120deg, #4FD1DF 0%, #FFC857 55%, #FF8A5B 100%);
+    --gradient-soft: linear-gradient(120deg, #123A42 0%, #3D2E14 100%);
+    --gradient-line: linear-gradient(90deg, #4FD1DF, #FFC857 40%, #FF8A5B 65%, transparent);
+    --glow-primary: rgba(79, 209, 223, 0.13);
+    --glow-secondary: rgba(255, 179, 71, 0.10);
+  }
+}
+
+:root[data-ambiance="summer"][data-theme="dark"] {
+  --color-bg: #0A1A1F;
+  --color-surface: #11262D;
+  --color-text: #EAF4F5;
+  --color-muted: #9FB6BB;
+  --color-border: #21404A;
+  --color-primary: #4FD1DF;
+  --color-secondary: #FFB347;
+  --color-on-accent: #0A1A1F;
+  --gradient-brand: linear-gradient(120deg, #4FD1DF 0%, #FFC857 55%, #FF8A5B 100%);
+  --gradient-soft: linear-gradient(120deg, #123A42 0%, #3D2E14 100%);
+  --gradient-line: linear-gradient(90deg, #4FD1DF, #FFC857 40%, #FF8A5B 65%, transparent);
+  --glow-primary: rgba(79, 209, 223, 0.13);
+  --glow-secondary: rgba(255, 179, 71, 0.10);
+}
