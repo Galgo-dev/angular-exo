@@ -61,3 +61,4 @@ sont des `*Store` ; les modèles gardent `.model.ts`.
 - `Sidebar` a `:host { display: contents }` pour que `position: sticky` fonctionne : ne pas retirer.
 - Accessibilité à préserver : sections reliées à leur titre (`aria-labelledby`), menu d'ambiance
   navigable au clavier (listbox), `aria-pressed` sur le sélecteur de langue, `prefers-reduced-motion`.
+- Au-delà de 10 fichiers modifiés : proposer un plan d'abord.
